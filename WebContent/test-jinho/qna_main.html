@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>QnA All List</title>
+    <script></script>
+</head>
+
+<body>
+    <h1>QnA Main Page - ALL LIST</h1>
+    <input type="button" value="글쓰기" onclick="location.href='qna_insert.html'">
+    <div id="target"></div>
+    <hr>
+
+</body>
+
+<script>
+    const request = new XMLHttpRequest();
+
+    request.open("post", "/nikepro/QnaAllList.do", true);
+
+    request.setRequestHeader("Content-Type", "application/json");
+
+    request.send();
+
+    request.onreadystatechange = function () {
+        if (request.readyState === 4 && request.status === 200) {
+            let target = document.getElementById('target');
+            let data = request.response;
+
+            let str = JSON.parse(data);
+
+            let code = "";
+
+            code += "<table border='1'>";
+            code += "<tr><td>글번호</td><td>제목</td><td>작성자</td><td>작성일</td></tr>";
+
+            for (index in str) {
+                code += "<tr><td>" + str[index].qna_no + "</td>";
+                code += "<td><a href='test-jinho/qna_content.html?qna_no=" + str[index].qna_no + "'>" + str[index].qna_title + "</a></td>";
+                code += "<td>" + str[index].mem_id + "</td>";
+                code += "<td>" + str[index].qna_date + "</td></tr>";
+            }
+
+            code += "</table>";
+
+            target.innerHTML = code;
+        }
+    }
+</script>
+
+</html>

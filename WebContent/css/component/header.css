@@ -1,0 +1,203 @@
+header a,
+header form {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+/* 	vertical-align: baseline; */
+}
+
+header a {
+	color: black;
+}
+
+header .status-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 36px;
+    min-height: 36px;
+    padding: 0 38px 0 36px;
+    background-color: var(--main-bg-color);
+}
+
+.status-bar__left svg:hover {
+    fill: #666666;
+}
+
+.status-bar__right .uk-navbar-nav {
+    font-size: 12px !important;
+    font-weight: 600 !important;
+}
+
+.status-bar__right .uk-navbar-dropdown {
+	top: 40px !important;
+}
+
+.status-bar__right .uk-navbar-dropdown-nav {
+	font-weight: 400 !important;
+}
+
+.status-bar__right a:hover {
+    color: #666666;
+}
+
+/* 기본 설정 */
+.menu-bar {
+	z-index: 10;
+    height: 80px;
+    min-height: 80px;
+}
+
+.menu-bar__logo img {
+    width: 80px;
+}
+
+.menu-bar__logo img:hover {
+    opacity: 0.7;
+}
+
+/* 메뉴 - New Release, Men, Women, Kids, Sale, ONUM */
+.menu-bar__nav {
+	width: 52%;
+	height: 100%;
+	background-color: white;
+	z-index: 9;
+}
+
+.menu-bar__nav ul {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.menu-bar__nav ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu-bar__nav-title {
+	position: relative;
+    padding: 0 20px;
+    font-weight: 400;
+    font-size: 18px !important;
+    letter-spacing: -1px;
+    text-align: center;
+    z-index: 9;
+}
+
+.menu-bar__nav-title:hover {
+    text-decoration: solid underline black 1px !important;
+}
+
+/* 상세 메뉴 (드롭 메뉴) */
+.menu-bar__nav-menu {
+	position: absolute;
+	top: 60px;
+	left: 200px;
+    display: none;
+	width: 100%;
+    background-color: #fff;
+}
+
+.menu-bar__nav-menu div {
+    margin: 30px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.menu-bar__nav-menu div a {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.menu-bar__nav-menu div *:first-child {
+    margin-bottom: 25px;
+    font-size: 18px;
+    color: black;
+}
+
+.menu-bar__nav-menu div a {
+    display: flex;
+    justify-content: flex-start;
+    width: 150px;
+    line-height: 25px;
+    font-size: 15px;
+}
+
+/* uk-navbar-right */
+
+/* .uk-navbar-right{ */
+/* 	width: 300px; */
+/* 	display: flex; */
+/* 	justify-content: center; */
+/* } */
+
+
+
+/* 검색 */
+.menu-bar__search {
+    position: absolute;
+    right: 150px;
+    display: flex;
+    align-items: center;
+    width: 180px;
+    height: 40px;
+    border-radius: 20px;
+    z-index: 999;
+    background-color: var(--main-bg-color);
+    transition: all 0.5s ease-in-out;
+}
+
+
+.menu-bar__search i {
+    margin-left: 10px;
+}
+
+.menu-bar__search input {
+    margin-left: 10px;
+    width: 80%;
+    background: none;
+    font-size: 15px;
+}
+
+
+/*search 애니메이션*/
+.menu-bar__search input:focus{
+	position: absolute;
+    margin-left: 50px;
+}
+
+.menu-bar__search:focus-within{
+	position: absolute;
+    width: 75vw;
+}
+
+.menu-bar__search input::placeholder {
+    color: #d6d6d6;
+}
+
+/* 찜, 장바구니 */
+.menu-bar__heartnbag {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    /*
+    width: 24%;
+    */
+    
+}
+
+.menu-bar__heartnbag i:first-child {
+    margin-right: 25px;
+    
+}
+
+.show-nav {
+	display: flex;
+}
+
+

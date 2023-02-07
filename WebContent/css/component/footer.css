@@ -1,0 +1,95 @@
+@charset "UTF-8";
+
+/*
+▶footer 구조
+	<body>
+	  <footer>
+		.footer
+			.footer_navbar
+				ㄴ .footer_navbar_menu
+				ㄴ .footer_navbar_icons
+			.footer_info_s
+				ㄴ .footer_info_simple1
+				ㄴ .footer_info_simple2
+			.footer_info_d
+				ㄴ .footer_info_detail1
+				ㄴ .footer_info_detail2				
+*/
+footer {
+	display: flex;
+	justify-content: center;
+	margin: 0;
+	color: grey;
+	background: #1C1C1C;
+	padding: 40px 40px 0px;
+}
+
+.footer {
+	width: 1440px;
+	/* height: auto; */
+}
+
+.footer li {
+	list-style: none;
+	display: inline-block;
+	width: 100%;
+	margin: 0px 0px 3px;
+	padding: 8px 0px;
+}
+
+.footer a {
+	color: white;
+}
+
+.footer a:not(.footer_info_d a) {
+	text-decoration: none;
+}
+
+.footer a:not(.footer_nerbar_menu_important, .footer_navbar_icons a) {
+	font-size: 0.8em;
+	color: grey;
+}
+
+.footer_info_d {
+	font-size: 0.8em;
+}
+
+.footer hr {
+	margin: 0;
+	padding: 0;
+	border: 1px solid white;
+	width: 99.5%;
+}
+
+.footer_navbar, .footer_navbar_menu, .footer_navbar_icons,
+	.footer_info_s, .footer_info_d {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+/*.footer_navbar 공통*/
+.footer_navbar ul {
+	margin: 0;
+	padding: 0;
+}
+
+/*.footer_navbar의 menu*/
+.footer_navbar_menu ul {
+	width: 250px;
+	height: 300px;
+}
+
+.footer_nerbar_menu_important {
+	color: ivory;
+}
+
+/*.footer_navbard의 icons*/
+.footer_navbar_icons a {
+	color: grey;
+	margin: 8px 10px;
+}
+
+.footer_navbar_icons a:hover {
+	color: white;
+}

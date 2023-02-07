@@ -1,0 +1,269 @@
+.pay-wrap {
+	display: flex;
+	justify-content: center;
+	height: 2000px;
+	font-weight: bold;
+	background-color: white;
+}
+
+.pay-title {
+/* 	margin: 100px auto; */
+	padding: 50px 100px 100px 100px;
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+	background-color: white;
+}
+
+.pay-content {
+	width: 800px;
+	margin-right: 100px;
+	background-color: white;
+}
+
+.pay-content > div {
+/* 	padding-bottom: 30px; */
+	margin-bottom: 50px;
+}
+
+.pay-option__title,
+.pay-method__title,
+.pay-side__title {
+	margin-bottom: 50px;
+}
+
+.pay-option__title {
+	display: flex;
+	justify-content: space-between;
+}
+
+.pay-option__title span,
+.pay-method__title span,
+.pay-side__title span {
+
+	font-size: 24px;
+}
+
+.pay-option__title .pay-option__edit-post {
+	font-size: 16px;
+	text-decoration: 1px solid underline;
+	cursor: pointer;
+}
+
+.pay-option__title span {
+	margin-right: 50px;
+}
+
+.payPostForm input,
+.payPostForm button {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.payPostForm input {
+	width: 500px;
+}
+
+.pay-option__info {
+	display: grid;
+/* 	grid-template-columns: 40% 60%; */
+	row-gap: 10px;
+	padding: 25px 0;
+	border-bottom: 1px solid #DDDDDD;
+}
+
+.pay-option__info span:not(first-child){
+	color: #7a7a7a;
+	font-weight: 400;
+}
+
+.pay-method h4{
+	font-size: 18px;
+	padding: 20px 0;
+}
+
+.pay-method > div {
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+
+.pay-method > div ul {
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+#card{
+	margin-top: 20px;
+	padding: 25px;
+	border: 1px solid #DDDDDD;
+	border-radius: 10px;
+}
+
+#card i{
+	margin-right: 10px;
+}
+
+.pay-side {
+	position: sticky;
+	top: 50px;
+	right: 0;
+	bottom: 500px;
+	height: 600px;
+	overflow: scroll;
+	/*
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+	*/
+}
+
+/*
+.pay-side::-webkit-scrollbar {
+  display: none;
+}
+*/
+
+.pay-side__info {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	row-gap: 10px;
+	margin-bottom: 50px;
+	font-weight: 500;
+}
+
+#agree{
+	margin-left: 10px;
+}
+
+#agreeContent{
+	float : left;
+	text-decoration: underline;
+}
+
+.pay-method_btn{
+	text-align: right;
+}
+
+
+#payImage{
+	width: 50px;
+	height: 23px;
+
+}
+.cart-prod__container img{
+	width: 200px;
+	height: 200px;
+}
+
+
+
+.cart-prod__container{
+	display: flex;
+	flex-direction: column;	
+
+}
+
+
+
+.cart-prod__container__column{
+	display: flex;
+	flex-direction: column;
+}
+
+.cart-prod__container__column span:not(first-child){
+	color: #7a7a7a;
+	font-weight: 400;
+	margin-bottom: 10px;
+	margin-left: 10px;
+}
+
+
+
+/*************** 결제완료 ********************/
+
+
+
+.bill-option__title{
+	font-size: 30px;
+}
+
+.bill-option__info{
+	display: grid;
+/* 	grid-template-columns: 40% 60%; */
+/* 	row-gap: 5px; */
+	padding-top: 25px;
+	padding-bottom: 30px;
+	border-bottom: 1px solid #DDDDDD;
+	color: #7a7a7a;
+}
+
+.bill-option__info div:first-child{
+	color: black;
+}
+
+
+.bill-res{
+	margin-top: 0px;
+}
+
+.bill-res__title{
+	margin-top: 0px;
+	border-top: none;
+}
+
+.bill-res__contents{
+	line-height: 30px;
+}
+
+.bill-res__contents span:not(nth-child(3)),
+.bill-res__contents span:not(nth-child(5)){
+	font-size: 30px;
+}
+
+.bill-res__contents div{
+	color: #7a7a7a;
+}
+
+.bill-side__info img{
+	width: 95px;
+	height: 96px;
+	margin: 0px;
+	padding: 0px;
+}
+
+#billsBtn{
+	background-color: white;
+	color: black;
+	border: 1px solid #7a7a7a;
+	width: 200px;
+}
+
+.bill-side__title{
+	margin-bottom: 20px;
+}
+
+
+.bill-side__info {
+	display: grid;
+/* 	grid-template-columns: 1fr 1fr; */
+	row-gap: 10px;
+	margin-bottom: 50px;
+	color: #7a7a7a;
+}
+
+.bill-side__info span:first-child{
+	padding: 15px 0;
+	color: black;
+}
+
+.bill-side__info span:nth-child(2){
+	color: black;
+	
+}
+
+.bill-side__res{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	row-gap: 10px;
+	margin-bottom: 50px;
+}
+

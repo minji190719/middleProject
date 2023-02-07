@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+    PUBLIC "-/ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+    
+<sqlMap namespace="notice">
+	<select id="selectAllNotice" resultClass="noticeVo">
+		select * from notice order by notice_no asc
+	</select>
+	
+	<select id="selectNotice_title" parameterClass="String" resultClass="noticeVo" >
+		select * from notice where notice_title like '%' || #notice_title# || '%' order by notice_no desc
+	</select>
+	
+	<select id= "selectNotice_no" parameterClass="int" resultClass="noticeVo">
+		select * from notice where notice_no = #notice_no#
+	</select>
+	
+	<!-- 외래키 mem_id 인서트 할때 어떻게 할건지..! notice_seq.nextval -->
+	<insert id="insertNotice" parameterClass="noticeVo" >
+		insert into notice ( notice_no, mem_id, notice_content, notice_title, notice_date)
+		values( notice_seq.nextval , #mem_id#, #notice_content#, #notice_title#, sysdate)
+	</insert>
+	
+	<update id="updateNotice" parameterClass="map">
+		update notice set $column$ = #data# where notice_no = #notice_no#
+	</update>
+
+	<update id="updateNotice2" parameterClass="noticeVo">
+		update notice set notice_content = #notice_content#, notice_title = #notice_title#
+						  , notice_date = sysdate
+					  where notice_no = #notice_no#
+	</update>
+	
+	<delete id="deleteNotice" parameterClass="int">
+		delete from notice where notice_no = #notice_no#
+	</delete>
+	
+
+
+</sqlMap>

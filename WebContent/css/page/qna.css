@@ -1,0 +1,219 @@
+@charset "UTF-8";
+
+/*------------------------------------------qna_main */
+.qna_main{
+	width: 1000px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.qna_main h1{
+	font-size: 2em;
+	font-weight: bold;
+	width: 100%;
+	text-align: center;
+}
+
+.qna_main input[type="button"]{
+	border-radius: 20px;
+	padding: 5px 10px;
+	margin: 10px;
+	background-color: rgba(128, 128, 128, 0.187);
+}
+
+.qna_main table thead{
+	background-color: rgba(128, 128, 128, 0.187);
+	color: black;
+}
+
+.qna_search{
+	width: 1000px;
+	margin: 0 auto;
+}
+.qna_search tr:first-child{
+	background-color: rgb(219, 215, 215);
+	color: ivory;
+}
+
+.qna_search td{
+	padding: 10px;
+}
+
+.qna_main
+/*------------------------------------------qna_insert */
+.qna_insert_title{
+	width: 1000px;
+	margin: 0 auto;
+	font-size: 2em;
+	font-weight: bold;
+	text-align: center;
+}
+
+.qna_insert_title+br+hr{
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.qna_insert_table{
+	width: 1000px;
+	margin: 0 auto;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+.qna_insert_table tr:first-child{
+	border-bottom: 1px solid black;
+}
+.qna_insert_table td:first-child{
+	width: 10%;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.qna_insert_table td{
+	padding: 20px;
+}
+
+.qna_insert_table input{
+	width: 100%;
+}
+
+.qna_insert_table textarea {
+	width: 100%;
+	height: 100px;
+	resize: none;
+	padding: 0;
+	border: none;
+}
+
+.qna_insert_table textarea:focus{
+	outline: none;
+}
+
+.qna_insert_btn{
+	display: block;
+	margin: 0 auto;
+	padding: 10px;
+	border-radius: 20px;
+	background-color: rgba(128, 128, 128, 0.187);
+}
+
+/*------------------------------------------qna_mylist */
+.qna_mylist_title{
+	width: 1000px;
+	margin: 0 auto;
+	font-size: 2em;
+	font-weight: bold;
+	text-align: center;
+}
+
+.qna_mylist_detail{
+	width: 500px;
+	padding: 20px;
+	margin: 0 auto;
+	border: 1px solid black;
+	background-color: white;
+}
+
+.qna_mylist_detail+br+div{
+	width: 500px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.qna_mylist_detail+br+div input{
+	background-color: rgba(128, 128, 128, 0.187);
+	border-radius: 20px;
+	padding: 5px 10px;
+	margin: 5px;
+}
+
+/*------------------------------------------qna_detail */
+.qna_detail_title{
+	width: 1000px;
+	margin: 0 auto;
+	font-size: 1.3em;
+	font-weight: bold;
+	text-align: center;
+}
+
+.qna_detail_title+br+hr{
+	width: 1000px;
+	margin: 0 auto;	
+}
+
+.qna_detail_target{
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.qna_detail_table{
+	width: 100%;
+	border-top: 1px solid black;
+}
+
+.qna_detail_table tr:first-child,
+.qna_detail_table tr:nth-child(3){
+	background-color: rgba(128, 128, 128, 0.187);
+	color: black;
+}
+
+.qna_detail_table tr:last-child{
+	border-bottom: 1px solid black;
+	height: 100px;
+}
+
+.qna_detail_table td{
+	margin: 10px;
+	padding: 10px;
+	text-align: center;
+}
+
+.qna_detail_btn_container{
+	width: 1000px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.qna_detail_btn_container input{
+	background-color: rgba(128, 128, 128, 0.187);
+	border-radius: 20px;
+	padding: 5px 10px;
+	margin: 5px;
+}
+
+/*------------------------------------------.qna_update */
+.qna_update_title{
+	width: 1000px;
+	margin: 0 auto;
+	font-size: 1.3em;
+	font-weight: bold;
+	text-align: center;	
+}
+
+.qna_update_title+br+hr{
+	width: 1000px;
+	margin: 0 auto;		
+}
+
+.qna_update_target{
+	width: 1000px;
+	margin: 0 auto;	
+	text-align: center;
+	color: black;
+}
+
+.qna_update_btn_container{
+	width: 1000px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+}
+
+.qna_update_btn_container input{
+	display: inline-block;
+	background-color: rgba(128, 128, 128, 0.187);
+	border-radius: 20px;
+	padding: 5px 10px;
+	margin: 5px;
+}

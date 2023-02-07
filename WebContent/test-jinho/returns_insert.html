@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="UTF-8">
+   <title>Insert title here</title>
+</head>
+
+<body>
+   <div id="target"></div>
+</body>
+
+<script>
+   const request = new XMLHttpRequest();
+
+   request.open("post", "/nikepro/snsList_Mypage.do", true);
+
+   request.setRequestHeader("Content-Type", "application/json");
+
+   request.send();
+
+   request.onreadystatechange = function () {
+      if (request.readyState === 4 && request.status === 200) {
+         let target = document.getElementById("main_list")
+         let data = request.response;
+         if (data === "로그인을 해주세요.") {
+            alert(data);
+            location.href = "/nikepro/SnsMain.do";
+         } else {
+            let str = JSON.parse(data);
+            let code = "";
+
+            for (index in str) {
+               code += '<div class="pictures">';
+               code += '<a href="/nikepro/snsDetail.do?sns_no=' + str[index].sns_no + '"><img src="/nikepro/images/sns/' + str[index].sns_photo + '"></a>'
+               code += '</div>';
+            }
+
+            target.innerHTML = code;
+         }
+
+      }
+   }
+
+</script>
+
+</html>

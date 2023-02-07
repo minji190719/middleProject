@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 이 문서는 iBatis에서 처리할 SQL문을 작성하는 문서입니다. -->
+<!DOCTYPE sqlMap
+    PUBLIC "-/ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="wish">
+
+    <select id="selectAllWish" resultClass="wishVo" parameterClass="String">
+        SELECT * FROM WISH where mem_id = #mem_id#
+    </select>
+    
+    <select id="selectWish" parameterClass="String" resultClass="wishVo">
+        SELECT * FROM WISH WHERE WISH_NO = #wish_no#
+    </select>
+
+    <select id="checkWish" parameterClass="String" resultClass="wishVo">
+        SELECT * FROM WISH WHERE prod_id = #prod_id#
+    </select>
+    
+    <insert id="insertWish" parameterClass="wishVo">
+        INSERT INTO WISH VALUES(wish_seq.nextval, #mem_id#, #prod_id#,#prod_size#)
+    </insert>
+    
+    <update id="updateWish" parameterClass="map">
+        UPDATE WISH SET $column$ = #data# WHERE WISH_NO = #wish_no#
+    </update>
+    
+    <!-- update2 자리 -->
+    
+    <delete id="deleteWish" parameterClass="String">
+        DELETE FROM WISH WHERE WISH_NO = #wish_no#
+    </delete>
+    
+</sqlMap>

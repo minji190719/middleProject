@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 이 문서는 iBatis에서 처리할 SQL문을 작성하는 문서입니다. -->
+<!DOCTYPE sqlMap
+    PUBLIC "-/ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+    
+<sqlMap namespace="review">
+
+    <select id="selectAllReview" resultClass="reviewVo">
+        SELECT * FROM REVIEW
+    </select>
+
+    <select id="selectAllReview_prod" resultClass="reviewVo" parameterClass="String">
+        SELECT A.* 
+		  FROM REVIEW A, CART B
+		 WHERE A.CART_NO = B.CART_NO
+		   AND B.PROD_ID = #prod_id#
+		   AND B.CART_STATUS = '1'
+    </select>
+    
+    <select id="selectReview_mem_id" parameterClass="String" resultClass="reviewVo">
+        SELECT * FROM REVIEW WHERE MEM_ID = #mem_id#
+    </select>
+    
+    <select id="selectReview" parameterClass="String" resultClass="reviewVo">
+        SELECT * FROM REVIEW WHERE CART_NO = #cart_no#
+    </select>
+
+    <select id="selectReview_review_no" parameterClass="String" resultClass="reviewVo">
+        SELECT * FROM REVIEW WHERE REVIEW_NO = #review_no#
+    </select>
+    
+    <select id="selectReview_cart_no" parameterClass="String" resultClass="reviewVo">
+        SELECT * FROM REVIEW WHERE CART_NO = #cart_no#
+    </select>
+    
+    <insert id="insertReview" parameterClass="reviewVo">
+        INSERT INTO REVIEW VALUES('V'||REVIEW_NO_SEQ.NEXTVAL, #cart_no#, #mem_id#,
+                         SYSDATE, #review_title#, #review_content#, #review_rating#)
+    </insert>
+    
+    <update id="updateReview" parameterClass="map">
+        UPDATE REVIEW SET $column$ = #data# WHERE REVIEW_NO = #review_no#
+    </update>
+    
+    <!-- update2 자리 -->
+    
+    <delete id="deleteReview" parameterClass="String">
+        DELETE FROM REVIEW WHERE REVIEW_NO = #review_no#
+    </delete>
+
+</sqlMap>

@@ -1,0 +1,186 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Roboto:wght@300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+/*header*/
+.sns-body * {
+    margin : 0;
+    padding : 0;
+    box-sizing : border-box;
+/*     font-family : "Roboto", sans-serif; */
+	font-family: Montserrat, Pretendard, sans-serif;
+}
+
+.sns-body {  
+    position : relative;
+    display: flex;
+    flex-direction: column;
+    align-items : center;
+    width : 100%;
+    background: #fafafa;
+    font-family: Montserrat, Pretendard, sans-serif;
+}
+
+.sns-body *:focus {
+    outline : none;
+}
+
+/* .sns_all_container { */
+/* 	position : relative; */
+/*     display: flex; */
+/*     flex-direction: column; */
+/*     align-items : center; */
+/*     width : 53%; */
+/*     border-left : 2px solid #ebebeb; */
+/*     border-right : 2px solid #ebebeb; */
+/* } */
+
+.navbar { 
+
+    position: sticky;
+    top : 0;
+    left : 0;
+    display: flex;
+    width : 100%;
+    height : 130px;
+    padding: 5px 0 10px 0;
+
+/*     border-bottom: 1px solid #black; */
+
+    justify-content: center;
+    z-index : 1;
+    background-color: rgba(255,255,255,0.8);
+    border-bottom: 1px solid #EBEBEB;
+}
+
+.nav_wrap {
+	position : absolute;
+    display: flex;
+    width : 100%;
+    height : 100%;
+    max-width : 1000px;
+    justify-content: space-between;
+    align-items: center;
+    margin : 30px;
+
+
+}
+
+.snslogo {
+    width : 100px;
+    height: 100%;
+    margin-top: 20px;
+    
+}
+
+.search_form {
+	margin-top : 20px;
+    margin-bottom: 20px;
+}
+
+.search_box {
+    position: absolute;
+    left: 50%;
+    width: 300px;
+    height: 40px;
+    background: rgba(255,255,255,0.3);
+/*     background: #fafafa; */
+/*     color : rgba(0, 0, 0, 5); */
+    text-indent : 27%;
+    text-transform: capitalize;
+    border-background: none;
+    border-radius: none;
+    border-bottom: 1px solid #dfdfdf;
+    transform: translate(-50%);
+    margin-top : 30px;
+
+}
+
+.nav_icons {
+    position : relative;
+    height: 40px;
+    display: flex;
+}
+
+.icon, .iconBack {
+    height: 100%;
+    cursor: pointer;
+    margin: 20px 10px;
+    display: flex;
+    text-decoration : none; 
+    color : #3c3c3c;
+    font-size : 1.5em;
+}
+
+.icon:hover {
+	color : #0395f6;
+}
+
+.sns__btns{
+	margin : 5%;
+	
+}
+
+#sns_delete, #sns_update {
+	text-align : center;
+	width : 50%;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    padding: 20px;
+    margin-right :5%;
+    font-size: 15px;
+    font-weight: bold;
+	color: #cecfd0;
+    cursor: pointer;
+}
+
+.main_container {
+/* 	min-height : 1200; */
+	width : 55%;
+/* 	padding-top : 20px; */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+/* 	margin: 0 auto; */
+	border-left : 2px solid #EBEBEB;
+	border-right : 2px solid #EBEBEB;
+/* 	align-items: center; */
+}
+
+/*section..main*/
+.main_list {
+    display: flex;
+    flex-wrap: wrap;
+	justify-content: center;
+    width : 100%;
+    padding-bottom : 3rem;
+    /*margin: -1rem -1rem;*/
+    margin: 2% auto;
+
+}
+
+/*
+ label 스타일 조정*/ 
+/* button { */
+/*     display: flex; */
+/*     justify-content: center; */
+/* } */
+
+/* 사진 div를 가운데에 놓을거예요 */
+.pictures {
+	display : flex;
+/* 	margin-right: auto; */
+/* 	margin-left: auto;  */
+	margin : 2px;
+	justify-content: flex-start;
+	border : 1px solid none;
+	width : 32%;
+	height : 21vw;
+	border-radius: 6%;
+    overflow: hidden;
+}
+
+
+
+

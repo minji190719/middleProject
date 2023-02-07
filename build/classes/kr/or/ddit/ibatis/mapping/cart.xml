@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 이 문서는 iBatis에서 처리할 SQL문을 작성하는 문서입니다. -->
+<!DOCTYPE sqlMap
+    PUBLIC "-/ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+    
+<sqlMap namespace="cart">
+
+	<select id="selectAllCart" resultClass="cartVo" parameterClass="String">
+		select a.*,(select b.prod_color from prod b where b.prod_id = a.prod_id) as prod_color 
+		from cart a where mem_id = #data# and cart_status = '0'
+	</select>
+	
+	
+	<select id="selectCart" parameterClass="String" resultClass="cartVo">
+		select * from cart where cart_no = #data#
+	</select>
+	
+	<select id="selectCart2" parameterClass="map" resultClass="cartVo">
+		select * from cart where mem_id = #mem_id# and prod_id = #prod_id# and prod_size =#prod_size#
+	</select>
+	
+	<select id="selectCart3" parameterClass="String" resultClass="cartVo">
+		select * from cart where pay_no = #pay_no# and cart_status = '1'
+	</select>
+	
+	<select id="selectCart_Returns" parameterClass="String" resultClass="cartVo">
+        SELECT A.*,
+               (SELECT B.PAY_DATE 
+                  FROM PAYMENT B 
+                 WHERE B.PAY_NO = A.PAY_NO) AS PAY_DATE
+          FROM CART A 
+         WHERE MEM_ID = #mem_id# AND CART_STATUS = 1
+    </select>
+	
+     <insert id="insertCart" parameterClass="cartVo">
+
+       insert into cart(cart_no,prod_id,pay_no,cart_qty,prod_size,cart_status,mem_id,prod_name,prod_price) 
+       values(cart_seq.nextval,#prod_id#,'',1,#prod_size#,'0',#mem_id#,#prod_name#,#prod_price#)
+
+    </insert>
+      
+<!--     중 고 거 래  -->
+     <insert id="insertCart2" parameterClass="salesrequestVo">
+       insert into cart(cart_no,prod_id,pay_no,cart_qty,prod_size,cart_status,mem_id,prod_name,prod_price) 
+       values(#req_no#,'used','',1,#req_photo#,'0',#mem_id#,#origin_name#,#req_price#)
+    </insert>
+    
+    
+    <update id="updateCart" parameterClass="map">
+    	update cart set $column$ = #data# where cart_no = #cart_no#
+    </update>
+    
+    <update id="updateCart2" parameterClass="cartVo">
+    	update cart set prod_id = #prod_id#, pay_no=#pay_no#,
+    	cart_qty = #cart_qty#, prod_size = #prod_size#, cart_status = #cart_status# 
+    	where cart_no = #cart_no#
+    </update>
+    
+    <!-- 제품 상세보기  페이지에서 추가할때 -->
+    <update id="updateCart3" parameterClass="map">
+    	update cart set cart_qty = cart_qty+1, prod_price = prod_price + prod_price 
+    	where mem_id = #mem_id# and prod_id = #prod_id# and prod_size =#prod_size#
+    </update>
+    
+    <update id="updateCart4" parameterClass="map">
+    	update cart set cart_status ='1', pay_no=#pay_no# where cart_no = #cart_no#
+    </update>
+	
+	<!-- 장바구니 페이지에서 추가할때 -->
+    <update id="updateCart5" parameterClass="map">
+    	update cart set cart_qty = #cart_qty#, 
+    	prod_price = ((select prod_price from prod where prod_id = 
+    	(select prod_id from cart where cart_no = #cart_no#))*#cart_qty#) 
+    	where cart_no = #cart_no#
+    </update>
+    
+    <delete id="deleteCart" parameterClass="String">
+    	delete from cart where cart_no = #cart_no#
+    </delete>
+
+</sqlMap>

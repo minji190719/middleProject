@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+
+    //sns_no 데이터 있음 //댓글 단 멤버아이디랑 댓글번호 가져와야함
+    document.getElementById("deleteBtn").onclick = function () {
+
+        const request = new XMLHttpRequest();
+
+        request.open("post", "/nikepro/SnsUpdate.do", true);
+
+        request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+        request.send("sns_no=" + sns_no);
+
+        request.onreadystatechange = function () {
+            if (request.readyState == 4 && request.status == 200) {
+
+            }
+        }
+    }
+    code += '<input type="button" onclick="nikepro/QnaDelete.do?board_no="' +
+        str[index].board_no + '">';
+</script>
+
+</html>

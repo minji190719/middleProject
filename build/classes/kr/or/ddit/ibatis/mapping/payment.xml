@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+    PUBLIC "-/ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+    
+<sqlMap namespace="payment">
+	<select id="selectAllPayment" resultClass="paymentVo">
+		select * from payment 
+	</select>
+	
+	<select id="selectPayment" parameterClass="String" resultClass="paymentVo" >
+		select * from payment where pay_no = #pay_no#
+	</select>
+
+	<select id="selectPayNo" parameterClass="String" resultClass="String" >
+		select distinct last_value(pay_no) over() as pay_no from payment where mem_id = #mem_id# 
+	</select>
+	
+	<insert id="insertPayment" parameterClass="paymentVo" >
+		insert into payment ( pay_no, mem_id, pay_total, pay_date)
+		values(pay_seq.nextval, #mem_id#, #pay_total#, sysdate)
+	</insert>
+	
+	<insert id="insertPayNo" >
+		insert into pay_no values(pay_seq.nextval)
+	</insert>
+	
+	<select id="selectNewPayNo" resultClass="String">
+		select max(pay_no) from pay_no
+	</select>
+	
+	
+	<!-- 사실 바꾸는건 반품시 결제금액이 바뀌었을때 날짜가 바뀌는 것 뿐인데
+	 update문이 두개가 있을 필요가 있을까요? -->
+	 <!-- 아니여 -->
+	<update id="updatePayment" parameterClass="map">
+		update payment set $column$ = #data# where pay_no = #pay_no#
+	</update>
+
+	<update id="updatePayment2" parameterClass="paymentVo">
+		update payment set pay_total = #pay_total#
+						  , pay_date = sysdate 
+					  where pay_no = #pay_no#
+	</update>
+	
+	<delete id="deletePayment" parameterClass="String">
+		delete from payment where pay_no = #pay_no#
+	</delete>
+	
+
+
+</sqlMap>

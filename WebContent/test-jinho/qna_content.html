@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="UTF-8">
+   <title>Insert title here</title>
+</head>
+
+<body>
+   <h1>디테일</h1>
+   <div id="target"></div>
+   <input type="button" value="제목 수정하기" onclick="updataTitle()">
+   <input type="button" value="내용 수정하기" onclick="updateContent()">
+   <input type="button" value="삭제하기" onclick="deleteQna()">
+
+</body>
+<script>
+   const urlSearch = new URLSearchParams(location.search);
+   let qna_no = urlSearch.get('qna_no');
+
+   function updataTitle() {
+      location.href = "qna_updateTitle.html?qna_no=" + qna_no;
+   }
+
+   function updateContent() {
+      location.href = "qna_updateContent.html?qna_no=" + qna_no;
+   }
+
+   function deleteQna() {
+      //const request = new XMLHttpRequest();
+      request.open('post', '/nikepro/QnaDelete.do', true);
+      request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+      request.send(`qna_no=${qna_no}`);
+
+      request.onreadystatechange = function () {
+         if (request.readyState === 4 && request.status === 200) {
+            let data = request.response;
+            alert(data);
+            location.href = "qna_main.html";
+         }
+      }
+   }
+
+
+   const request = new XMLHttpRequest();
+
+   request.open('post', '/nikepro/QnaDetail.do', true);
+   request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+   request.send(`qna_no=${qna_no}`); //get방식으로 보냈더니 send에 보낸 데이터 인식안됨. post만 가능.
+
+   request.onreadystatechange = function () {
+      if (request.readyState === 4 && request.status === 200) {
+         let target = document.getElementById('target');
+         let data = request.response;
+
+         let str = JSON.parse(data);
+
+         let code = "";
+         code += "<table border='1'>";
+         code += "<tr><td>글번호</td><td>제목</td><td>작성자</td><td>작성일</td></tr>";
+         code += "<tr><td>" + str.qna_no + "</td><td>" + str.qna_title
+            + "</td><td>" + str.mem_id + "</td><td>" + str.qna_date + "</td></tr>";
+         code += "<tr><td>" + str.qna_content + "</td></tr>";
+         code += "</table>";
+
+         target.innerHTML = code;
+      }
+   }
+
+
+
+</script>
+
+</html>

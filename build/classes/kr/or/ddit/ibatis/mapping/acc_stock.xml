@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 이 문서는 iBatis에서 처리할 SQL문을 작성하는 문서입니다. -->
+<!DOCTYPE sqlMap
+    PUBLIC "-/ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+    
+<sqlMap namespace="acc_stock">
+
+	<select id="selectAllAcc_Stock" resultClass="acc_stockVo">
+		select * from acc_stock 
+	</select>
+
+
+	<select id="selectAcc_Stock" parameterClass="String" resultClass="acc_stockVo">
+		select * from acc_stock where prod_id = #data#
+	</select>
+
+    <insert id="insertAcc_Stock" parameterClass="acc_stockVo">
+       insert into acc_stock(a_stock_no,prod_id,size_s,size_m,size_l) 
+       values(#a_stock_no#,#prod_id#,#size_s#,#size_m#,#size_l#)
+    </insert>
+    
+    <update id="updateAcc_Stock" parameterClass="map">
+    	update acc_stock set $column$ = #data# where prod_id = #prod_id#
+    </update>
+    
+    <update id="updateAcc_Stock2" parameterClass="acc_stockVo">
+    	update acc_stock set 
+    	size_s = #size_s#, 
+    	size_m = #size_m#,
+    	size_l = #size_l# where prod_id = #prod_id#
+    </update>
+    
+    <delete id="deleteAcc_Stock" parameterClass="String">
+    	delete from acc_stock where prod_id = #data#
+    </delete>
+    
+    
+
+</sqlMap>

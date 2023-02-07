@@ -1,0 +1,420 @@
+@charset "UTF-8";
+
+/*----------------------------------------------------------returns_list*/
+.returns_list_title{
+	width: 1000px;
+	font-size: 2em;
+	font-weight: bold;
+	width: 100%;
+	text-align: center;
+}
+
+.returns_list_target{
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.returns_list_table thead tr:first-child{
+	background-color: rgba(128, 128, 128, 0.187);
+	color: black;
+}
+
+.returns_list_table td{
+	text-align: center;
+}
+
+.returns_list_table_btn{
+	margin: 0 5px;
+	padding: 0px 5px;
+	border-radius: 50px;
+	background-color: rgba(128, 128, 128, 0.187);
+	color: black;
+}
+
+.returns_list_table_btn_n{
+	margin: 0 5px;
+	padding: 0px 5px;
+	background-color: black;
+	border-radius: 50px;
+	background-color: rgba(128, 128, 128, 0.187);
+	color: black;
+}
+
+.returns_list_table_btn_y{
+	margin: 0 5px;
+	padding: 0px 5px;
+	background-color: rgba(128, 128, 128, 0.187);
+	color: black;
+	border-radius: 50px;
+}
+
+.returns_list_btn{
+	display: block;
+	margin: 0 auto;
+	padding: 10px 20px;
+	background-color: rgba(128, 128, 128, 0.187);
+	border-radius: 50px;
+	color: black;
+}
+
+/*----------------------------------------------------------returns_mylist*/
+
+.returns_mylist_title{
+	width: 1000px;
+	font-size: 2em;
+	font-weight: bold;
+	width: 100%;
+	text-align: center;
+}
+.returns_mylist_target{
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.returns_mylist_table thead tr:first-child{
+	background-color: rgba(128, 128, 128, 0.187);
+	color: black;
+}
+
+.returns_mylist_table td{
+	text-align: center;
+}
+
+.returns_mylist_btn{
+	display: block;
+	margin: 0 auto;
+	padding: 10px 20px;
+	background-color: rgba(128, 128, 128, 0.187);
+	border-radius: 50px;
+	color: black;
+}
+
+
+
+/*----------------------------------------------------------returns_insert*/
+/*첫 번째 테이블*/
+.returns_insert_title{
+	width: 1000px;
+	font-size: 2em;
+	font-weight: bold;
+	width: 100%;
+	text-align: center;
+}
+
+.returns_insert_container1{
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.returns_insert_table1 thead{
+	padding: 14px;
+	background-color: rgba(128, 128, 128, 0.187);
+	color: black;
+}
+
+.returns_insert_table1 tbody{
+	text-align: center;
+}
+
+/*두 번째 테이블*/
+
+.returns_insert_container2 h2{
+	width: 1000px;
+	font-size: 1.1em;
+	width: 100%;
+	text-align: center;
+}
+
+.returns_insert_table2{
+	width: 1000px;
+	margin: 0 auto;
+	border-top: 1px solid black;
+}
+
+.returns_insert_table2 tr:first-child{
+	border-bottom: 1px solid black;
+}
+
+.returns_insert_table2 tr:nth-child(2){
+	border-bottom: 1px solid black;	
+}
+
+.returns_insert_table2 td:first-child:not(:last-child){
+	width: 20%;
+	text-align: center;
+}
+
+.returns_insert_table2 select{
+	width: 100%;
+	border: none;
+	padding: 10px;
+}
+
+.returns_insert_table2 select:focus{
+	outline: none;
+}
+
+.returns_insert_table2 textarea{
+	padding: 10px;
+	width: 100%;
+	height: 300px;
+	resize: none;
+	border: none;
+}
+
+.returns_insert_table2 textarea:focus{
+	outline: none;
+}
+
+.returns_insert_table2 tr:nth-child(2) td{
+	vertical-align: middle;
+}
+.returns_insert_table2 tr:last-child td{
+	text-align: center;
+}
+
+.returns_insert_table2 tr:last-child td input{
+	margin: 10px;
+	padding: 10px 20px;
+	border-radius: 20px;
+	background-color: rgba(128, 128, 128, 0.187);
+}
+
+/*----------------------------------------------------------returns_detail*/
+.returns_detail_title{
+	width: 1000px;
+	font-size: 2em;
+	font-weight: bold;
+	width: 100%;
+	text-align: center;
+}
+
+.returns_detail_container{
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.returns_detail_target table thead, .returns_detail_target h2{
+	background-color: rgba(128, 128, 128, 0.187);
+	padding: 14px;
+	color: black;
+	text-align: center;
+	border: none;
+}
+
+.returns_detail_target table td{
+	text-align: center;
+}
+
+.returns_detail_btncontainer{
+	width: 100%;
+	text-align: center;
+}
+
+
+.returns_detail_updateBtn_toss{
+	display: inline-block;
+	padding: 10px 20px;
+	background-color: rgba(128, 128, 128, 0.187);
+	border-radius: 50px;
+	color: black;
+}
+
+.returns_detail_deleteBtn_toss{
+	display: inline-block;
+	margin: 0 auto;
+	padding: 10px 20px;
+	background-color: rgba(128, 128, 128, 0.187);
+	border-radius: 50px;
+	color: black;
+}
+
+.returns_detail_content{
+	border: 2px solid rgb(226, 224, 224);
+	height: 100px;
+	padding: 10px;
+}
+/*----------------------------------------------------------returns_update*/
+.return_update_title{
+	width: 1000px;
+	font-size: 2em;
+	font-weight: bold;
+	width: 100%;
+	text-align: center;
+}
+
+.returns_update_target{
+	width: 1000px;
+	margin: 0 auto;
+}
+.returns_update_listContainer{
+	width: 80%;
+}
+
+.returns_update_listContainer thead td{
+	background-color: rgba(128, 128, 128, 0.187);
+	color: black;
+}
+
+.returns_update_listContainer td{
+	text-align: center;
+}
+
+
+.returns_update_inputContainer{
+	width: 1000px;
+	margin: 0 auto;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+.returns_update_inputContainer tr:first-child{
+	border-bottom: 1px solid black;
+}
+
+.returns_update_inputContainer td{
+	width: 100%;
+	padding: 10px;
+}
+
+.returns_update_inputContainer td:first-child{
+	text-align: center;
+	width: 10%;
+}
+
+.returns_update_inputContainer td:last-child input{
+	width: 100%;
+	padding: 20px;
+}
+
+.returns_update_inputContainer select{
+	width: 100%;
+	border: none;
+}
+
+.returns_update_inputContainer select:focus{
+	outline: none;
+}
+
+.returns_update_inputContainer select option[value=""][disabled]{
+	display: none;
+}
+
+.returns_update_inputContainer tr:last-child>td{
+	vertical-align: middle;
+}
+.returns_update_inputContainer textarea{
+	padding: 10px;
+	width: 100%;
+	height: 100px;
+	resize: none;
+	border: none;
+}
+
+.returns_update_inputContainer textarea:focus{
+	outline: none;
+}
+
+.returns_update_btn{
+	display: block;
+	margin: 0 auto;
+	padding: 10px 20px;
+	background-color: rgba(128, 128, 128, 0.187);
+	color: black;
+	border-radius: 50px;
+}
+
+/*----------------------------------------------------------returns_list_admin*/
+.returns_list_admin_title{
+	width: 1000px;
+	font-size: 2em;
+	font-weight: bold;
+	width: 100%;
+	text-align: center;
+}
+
+.returns_list_admin_target{
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.returns_list_admin_target thead{
+	background-color: rgba(128, 128, 128, 0.187);
+	color: black;
+}
+
+.returns_list_admin_target td{
+	text-align: center;
+}
+
+/*----------------------------------------------------------returns_detail_admin*/
+.returns_detail_admin{
+	width: 1000px;
+	font-size: 2em;
+	font-weight: bold;
+	width: 100%;
+	text-align: center;
+}
+
+.returns_detail_admin_target{
+	width: 1000px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.returns_detail_admin_target thead{
+	background-color: rgba(128, 128, 128, 0.187);
+	color: black;
+}
+
+.returns_detail_admin_target td{
+	text-align: center;
+	padding: 10px;
+}
+
+
+.returns_detail_admin_target textarea{
+	margin: 10px;
+	width: 100%;
+	height: 100px;
+	resize: none;
+	padding: 0;
+	border: none;
+	border-bottom: 1px solid black;
+	background-color: var(--main-bg-color);
+}
+
+.returns_detail_admin_target textarea:focus {
+	outline: none;
+}
+
+.returns_detail_admin_target h2{
+	width: 100%;
+	padding: 10px;
+	text-align: center;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	background-color: none;
+}
+
+.returns_detail_admin_target>input{
+	margin: 10px;
+	padding: 10px 20px;
+	background-color: rgba(128, 128, 128, 0.187);
+	border-radius: 50px;
+	color: black;
+		
+}
+
+.returns_detail_admin_deleteBtn_toss{
+	width: 1000px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.returns_detail_admin_deleteBtn_toss input{
+	padding: 10px 20px;
+	background-color: rgba(128, 128, 128, 0.187);
+	border-radius: 50px;
+	color: black;		
+}

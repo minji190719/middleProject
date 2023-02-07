@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 이 문서는 iBatis에서 처리할 SQL문을 작성하는 문서입니다. -->
+<!DOCTYPE sqlMap
+    PUBLIC "-/ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+    
+<sqlMap namespace="member">
+	<select id="selectAllMember" resultClass="memberVo">
+		select * from member 
+	</select>
+	
+	<select id="selectMember" parameterClass="String" resultClass="memberVo" >
+		select * from member where mem_id = #mem_id#
+	</select>
+	
+	<select id="getLoginMember" parameterClass="map" resultClass="memberVo" >
+		select * from member where mem_id = #mem_id# and mem_pass = #mem_pass#
+	</select>
+	
+	<insert id="insertMember" parameterClass="memberVo" >
+		insert into member ( mem_id, mem_pass, mem_name, mem_zip, mem_add1, mem_add2, mem_tel, mem_mail, mem_birth, mem_mileage)
+		 values(#mem_id#, #mem_pass#, #mem_name#, #mem_zip#, #mem_add1#, 
+                        #mem_add2#, #mem_tel#, #mem_mail#, #mem_birth#, 3000)
+	</insert>
+	
+	<update id="updateMember" parameterClass="map">
+		update member set $column$ = #data# where mem_id = #mem_id#
+	</update>
+
+	<update id="updateMember2" parameterClass="memberVo">
+		update member set mem_pass = #mem_pass#, mem_name = #mem_name#, 
+						mem_zip = #mem_zip#, mem_add1 = #mem_add1#, mem_add2 = #mem_add2#, 
+						mem_tel = #mem_tel#, mem_mail = #mem_mail#, mem_birth = #mem_birth#, 
+						mem_mileage = #mem_mileage#
+					 where mem_id = #mem_id#
+	</update>
+	
+	<delete id="deleteMember" parameterClass="String">
+		delete from member where mem_id = #mem_id#
+	</delete>
+
+	
+	
+</sqlMap>

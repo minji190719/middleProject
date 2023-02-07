@@ -1,0 +1,516 @@
+@charset "UTF-8";
+
+/*-----------------------------------------------------index*/
+/*상단 notice_search_form*/
+.notice_index_search_form{
+	width: 500px;
+	margin: 0 auto;
+	background-color: var(--main-bg-color);
+}
+
+.notice_index_search_form h2{
+	font-size: 2em;
+	font-weight: bold;
+	width: 100%;
+	text-align: center;
+}
+
+.notice_index_search_form>div{
+	position: relative;
+	width: 100%;
+}
+
+.notice_index_search_form>div>div{
+	width: 100%;
+	border: 0.5px solid black;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+.notice_index_search_form>div>div>input{
+	width: 93%;
+	background-color: var(--main-bg-color);
+}
+
+.notice_index_search_form>div>button{
+	position: absolute;
+	top: 14px;
+	right: 10px;
+	border: none;
+	background: none;
+}
+
+.notice_index_search_form>div>button>i{
+	color: grey;
+}
+
+/*notice_index_quick_support(빠른 지원)*/
+.notice_index_quick_support{
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.notice_index_quick_support h3{
+	font-size: 1.3em;
+	font-weight: bold;
+	padding: 10px 0px;
+}
+
+.notice_index_quick_support table{
+	width: 100%;
+	border: none;
+}
+
+.notice_index_quick_support table thead{
+	background-color: rgb(244, 244, 250);
+}
+
+.notice_index_quick_support table td{
+	border: none;
+}
+
+.notice_index_quick_support table tbody{
+	border: none;
+}
+.notice_index_quick_support table td:first-child{
+	width: 0%;
+	display: none;
+}
+
+.notice_index_quick_support table td:last-child{
+	width: 100%;
+}
+
+/*공지사항 링크*/
+.notice_index_notice{
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.notice_index_notice h3{
+	font-size: 1.3em;
+	font-weight: bold;
+	padding: 10px 0px;
+}
+
+/*문의하기*/
+.notice_index_inquire_head{
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.notice_index_inquire_head h3{
+	font-size: 1.3em;
+	font-weight: bold;
+	padding: 10px 0px;
+}
+
+.notice_index_inquire_content{
+	width: 1000px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-around;
+}
+
+.notice_index_inquire_content>ul>li{
+	text-align: center;
+	padding: 4px;
+}
+
+.notice_index_inquire_content li{
+	font-size: 0.9em;
+}
+
+/*-------------------------------------------notice_list*/
+
+.notice_list_title_container{
+	width: 1000px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: flex-start;
+  
+}
+.notice_list_title_container h2{
+	font-size: 1.3em;
+	font-weight: bold;
+	padding: 10px 0px;
+}
+
+.notice_list_btnAdd{
+	width: 110px;
+	height: auto;
+	overflow: hidden;
+	color: black;
+	background-color: rgba(128, 128, 128, 0.187);
+	border-radius: 50px; 
+}
+
+.notice_list_rowSet{
+	width: 1000px;
+	margin: 0 auto;
+	list-style: initial;
+}
+.notice_list_rowSet li{
+  padding: 10px 0px 10px;
+}
+
+.notice_list_row a{
+   color: black;
+   text-decoration: underline;
+   text-decoration-color: black;
+}
+
+.notice_list_row_bottom{
+	width: 1000px;
+	margin: 0 auto;
+}
+
+/*----------------------------------------------noticeSearchList*/
+.notice_searchList_container{
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.notice_searchList_container h3:first-child{
+	text-align: center;
+	font-size: 1.2em;
+}
+
+.notice_searchList_container h4{
+	text-align: center;
+	font-size: 1.0em;
+	font-weight: bold;
+}
+
+.notice_searchList_container h5{
+	text-align: center;
+	font-size: 0.8em;
+}
+
+.notice_searchList_container a{
+	font-size: 1.2em;
+	padding: 10px 0px;
+}
+
+.notice_searchList_container h6:first-child{
+	text-align: center;
+	font-size: 0.9em;
+}
+
+.notice_searchList_container h6{
+	text-align: left;
+	font-size: 0.9em;
+	padding: 10px 0px;
+}
+
+
+/*-----------------------------------------------notice_view*/
+.notice_view_form{
+	width: 1000px;
+	margin: 0px auto;
+}
+
+.notice_view_form table{
+	width: 100%;
+	border-top: 1px solid black;
+}
+
+.notice_view_form>table>tr{
+	padding: 10px;
+}
+
+.notice_view_form>table>tr>td{
+	width: 10%;
+	vertical-align: middle;
+    background-color: var(--main-bg-color);
+}
+
+.notice_view_form table tr:first-child td:nth-child(2){
+	vertical-align: middle;
+    background-color: var(--main-bg-color);
+}
+
+.notice_view_form td:first-child:not(:last-child) {
+	color: black;
+	padding: 20px;
+	text-align: center;
+	border-bottom: 1px solid black;
+	border-right: 1px solid black;
+	vertical-align: middle;
+}
+
+.notice_view_form td:not(:first-child){
+	width: 90%;
+	padding: 10px;
+	border-bottom: 1px solid black;
+}
+
+.notice_view_form textarea{
+	width: 100%;
+	height: 300px;
+	resize: none;
+	border: none;
+	background-color: var(--main-bg-color);
+}
+
+.notice_view_form textarea:focus{
+	outline: none;
+}
+
+.notice_view_btn{
+	margin: 0 auto;
+	width: 200px;
+	background-color: none;
+	padding: 20px 0px;
+	text-align: center;
+}
+
+.notice_view_btn input{
+	padding: 10px;
+	background-color: rgba(128, 128, 128, 0.187);
+	border-radius: 30px;
+}
+
+/*-----------------------------------------------notice_update*/
+.notice_update_form{
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.notice_update_form table{
+	width: 100%;
+	border-top: 1px solid black;
+}
+
+.notice_update_form tr:nth-child(3)>td:first-child{
+	vertical-align: middle;
+}
+
+.notice_update_form table tr:nth-child(2) input{
+	width: 100%;
+}
+.notice_update_form tr:last-child {
+	border-top: 0.5px solid black;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.notice_update_form tr:last-child>td div{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 10px;
+}
+
+.notice_update_form tr:last-child>td>div>div{
+	padding: 10px 20px;
+	border-radius: 20px;
+	color: black;
+}
+
+.notice_update_form tr:last-child div input{
+	width: 100%;
+	display: inline-block;
+	color: black;
+	justify-content: center;
+	background-color: rgba(128, 128, 128, 0.187);
+	padding: 10px;
+	margin: 10px;
+	border-radius: 20px;
+}
+
+
+.notice_update_form td{
+	padding: 10px;
+	text-align: center;
+}
+
+.notice_update_form textarea{
+	width: 100%;
+	height: 300px;
+	resize: none;
+	border: none;
+}
+
+.notice_update_form textarea:focus{
+	outline: none;
+}
+
+/*-----------------------------------------------------notice_insert*/
+.notice_insert_title{
+	text-align: center;
+	font-size: 1.2em;
+}
+
+.notice_insert_form{
+	width: 1000px;
+	margin: 0px auto;
+}
+
+.notice_insert_form input:first-child{
+	width: 100%;
+}
+
+.notice_insert_form table{
+	width: 100%;
+	border-top: 1px solid black;
+}
+
+.notice_insert_form>table>tr{
+	padding: 10px;
+}
+
+.notice_insert_form tr:first-child{
+	border-bottom: 0.5px solid black;
+}
+.notice_insert_form tr:first-child td:last-child{
+	vertical-align: middle;
+}
+
+.notice_insert_form tr:nth-child(2){
+	border-bottom: 0.5px solid black;
+}
+.notice_insert_form td:first-child:not(:last-child) {
+	color: black;
+	padding: 20px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.notice_insert_form td:not(:first-child){
+	padding: 10px;
+}
+
+.notice_insert_form textarea{
+	width: 100%;
+	height: 300px;
+	resize: none;
+	border: none;	
+}
+
+.notice_insert_form textarea:focus{
+	outline: none;
+}
+
+.notice_insert_btn{
+	width: 100%;
+	text-align: center;
+	padding: 20px;
+}
+.notice_insert_btn div{
+	display: inline-block;
+	justify-content: center;
+	background-color: none;
+	padding: 10px;
+	padding-left: 15px;
+	margin: 10px;
+	border-radius: 20px;
+	border: 1px solid black;
+}
+
+.notice_insert_btn div i{
+
+}
+
+.notice_insert_btn div input{
+	color: black;
+}
+
+/*----------------------------------notice_inquire_content*/
+
+.notice_inquire_content{
+	width: 200px;
+	margin: 0 auto;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.notice_inquire_content>ul{
+	padding: 10px;
+}
+
+.notice_inquire_content>ul>li{
+	text-align: center;
+	padding: 4px;
+	font-size: 0.7em;
+}
+
+.notice_inquire_content>ul>li:nth-child(2){
+	font-weight: bold;
+}
+
+/*----------------------------notice_detail*/
+/*---기본div설정---*/
+.notice_detail_container{
+	width: 1000px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+}
+
+.notice_detail_container>div:first-child{
+	width: 90%;
+	
+}
+
+.notice_detail_container>div:last-child{
+	border-left: 1px solid black;
+	border-left-style: 
+	width: 10%;
+}
+
+/*---세부 디테일 설정---*/
+.notice_detail h2, .notice_detail h4, .notice_detail p, .notice_detail b, .notice_detail li, .notice_detail h3{
+	padding: 10px;
+	margin: 10px;
+}
+
+.notice_detail h2{
+	font-size: 1.2em;
+}
+
+.notice_detail h3{
+	font-size: 1.1em;
+}
+
+.notice_detail h4{
+	color: grey;
+}
+
+.notice_detail p{
+	font-size: 0.9em;
+}
+
+.notice_detail b{
+	font-weight: bold;
+}
+
+.notice_detail button{
+	font-size: 0.8em;
+	width: auto;
+	background-color: black;
+	color: ivory;
+	padding: 5px 10px;
+	margin: 5px;
+	border-radius: 20px;
+}
+
+.notice_detail ul{
+	list-style: disc;
+	padding-left: 30px;
+	font-size: 0.8em;
+}
+
+.notice_detail ol{
+	list-style: decimal;
+	padding-left: 30px;
+	font-size: 0.8em;
+}
+
+.notice_detail img{
+	width: 95%;
+	margin: 0 auto;
+}
+

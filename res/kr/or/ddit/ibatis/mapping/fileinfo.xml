@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMap
+    PUBLIC "-/ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+    
+<sqlMap namespace="fileInfo">
+	<select id="selectAllFileInfo" resultClass="fileinfoVo">
+		select * from fileinfo 
+	</select>
+	
+	<select id="selectFileInfo" parameterClass="String" resultClass="fileinfoVo" >
+		select * from fileinfo where file_no = #file_no#
+	</select>
+	
+	<insert id="insertFileInfo" parameterClass="fileinfoVo" >
+		insert into fileinfo ( file_no, file_writer, origin_file_name, save_file_name, file_size, file_date)
+		values( #file_no#, #file_writer#, #origin_file_name#, #save_file_name#, #file_size#, #file_date#)
+	</insert>
+	
+	<delete id="deleteFileInfo" parameterClass="String">
+		delete from fileinfo where file_no = #file_no#
+	</delete>
+	
+	<update id="updateFileInfo" parameterClass="map">
+		update fileinfo set $column$ = #data# where file_no = #file_no#
+	</update>
+
+	<update id="updateFileInfo2" parameterClass="fileinfoVo">
+		update fileinfo set file_writer = #file_writer#, origin_file_name = #origin_file_name#, 
+							save_file_name = #save_file_name#, file_size = #file_size#, file_date = sysdate
+						where file_no = #file_no#
+	</update>
+	
+</sqlMap>

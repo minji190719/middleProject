@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 이 문서는 iBatis에서 처리할 SQL문을 작성하는 문서입니다. -->
+<!DOCTYPE sqlMap
+    PUBLIC "-/ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+    
+<sqlMap namespace="usedprod">
+    
+    <select id="selectAllUsedProd" resultClass="usedprodVo">
+        SELECT * FROM USEDPROD
+    </select>
+    
+    <select id="selectUsedProd" parameterClass="String" resultClass="usedprodVo">
+        SELECT * FROM USEDPROD WHERE REQ_NO = #req_no#
+    </select>
+    
+    <insert id="insertUsedProd" parameterClass="usedprodVo">
+        INSERT INTO USEDPROD VALUES(u_prod_no_seq.nextval, #req_no#, #u_prod_quality#, #u_prod_price#, 
+                            sysdate, 0)
+    </insert>
+    
+    <update id="updateUsedProd" parameterClass="map">
+        UPDATE USEDPROD SET $column$ = #data# WHERE U_PROD_NO = #u_prod_no#
+    </update>
+    
+    <!-- update2자리 -->
+    
+    <delete id="deleteUsedProd" parameterClass="String">
+        DELETE FROM USEDPROD WHERE REQ_NO = #req_no#
+    </delete>
+    
+</sqlMap>

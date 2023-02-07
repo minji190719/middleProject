@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.11.4/r-2.2.9/datatables.min.css" />
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+
+<head>
+   <meta charset="UTF-8">
+   <title>Insert title here</title>
+</head>
+
+
+<body>
+
+   <table table id="exampleTable" class="table table-bordered"></table>
+</body>
+
+
+<script>
+   const request = new XMLHttpRequest();
+
+   request.open("post", "/nikepro/returnsList.do", true);
+
+   request.setRequestHeader("Content-Type", "application/json");
+
+   request.send();
+
+   request.onreadystatechange = function () {
+      if (request.readyState === 4 && request.status === 200) {
+         let target = document.getElementById("exampleTable");
+         let data = request.response;
+
+         if (data === "로그인을 해주세요.") {
+            alert(data);
+            location.href = "/nikepro/SnsMain.do";
+
+         } else if (data === "구매 내역이 없습니다.") {
+            alert(data);
+            location.href = "/nikepro/SnsMain.do";
+
+         } else {
+            let str = JSON.parse(data);
+            let code = "";
+
+            code += "<thead><tr><td>카트번호</td><td>상품코드</td><td>상품명</td><td>가격</td><td>결제일</td></tr></thead>";
+            code += '<tbody>';
+
+            for (index in str) {
+               code += "<tr><td>" + str[index].cart_no + "</td>";
+               code += "<td>" + str[index].prod_id + "</td>";
+               code += "<td>" + str[index].prod_name + "</td>";
+               code += "<td>" + str[index].prod_price + "</td>";
+               code += "<td>" + str[index].pay_date + "</td></tr>";
+            }
+
+            code += '</tbody>';
+
+            target.innerHTML = code;
+
+            $('#exampleTable').DataTable({
+               order: [[3, 'desc']],
+               ordering: true,
+               serverSide: false
+            });
+
+         }
+
+      }
+   }
+
+</script>
+
+</html>

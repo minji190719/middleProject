@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 이 문서는 iBatis에서 처리할 SQL문을 작성하는 문서입니다. -->
+<!DOCTYPE sqlMap
+    PUBLIC "-/ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+    
+<sqlMap namespace="delivery">
+
+	<select id="selectAllDelivery" resultClass="deliveryVo">
+		select * from delivery
+	</select>
+	
+	<select id="selectDelivery" parameterClass="String" resultClass="deliveryVo">
+		select * from delivery where pay_no = #data#
+	</select>
+	
+     <insert id="insertDelivery" parameterClass="deliveryVo">
+       insert into delivery(deli_no,pay_no,addr_no,deli_status,deli_date) 
+       values(delivery_seq.nextval,#pay_no#,#addr_no#,'0', sysdate+2)
+    </insert>
+    
+    <update id="updateDelivery" parameterClass="map">
+    	update delivery set $column$ = #data# where deli_no = #deli_no#
+    </update>
+    
+    <update id="updateDelivery2" parameterClass="deliveryVo">
+    	update delivery set pay_no =#pay_no#,addr_no = #addr_no#,
+    	deli_status = #deli_status#, deli_date = #deli_date# where deli_no = #deli_no# 
+    </update>
+    
+    <delete id="deleteDelivery" parameterClass="String">
+    	delete from delivery where deli_no = #deli_no#
+    </delete>
+
+</sqlMap>

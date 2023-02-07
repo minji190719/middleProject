@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 이 문서는 iBatis의 환경 설정용 파일입니다. -->
+<!DOCTYPE sqlMapConfig
+    PUBLIC "-//ibatis.apache.org//DTD SQL MAP Config 2.0//EN"
+    "http://ibatis.apache.org./dtd/sql-map-config-2.dtd">
+<sqlMapConfig>
+    <!-- DB와 연결할 때 사용할 정보가 저장된 properties파일의 위치를 설정한다. -->
+    <properties resource = "kr/or/ddit/ibatis/config/dbinfo.properties" />
+    
+    <!-- 각각의 sqlMap파일의 네임스페이스와 id속성값을 연결해서 실행할 쿼리문을 선택할 수 있게 설정한다. -->
+    <settings useStatementNamespaces = "true" />
+    
+    <!-- 쿼리문에 사용할 VO객체는 패키지 이름을 포함한 전체 이름을 사용해야 한다.
+         그런데 이렇게 되면 문장이 너무 길어질 수 있기 때문에 전체 이름을 대신할 alias 를 설정할 수 있다.  
+         
+         형식) <typeAlias alias = "alias명" type = "클래스의 전체 이름"
+     -->
+     <typeAlias alias="acc_stockVo" type="kr.or.ddit.vo.Acc_StockVO"/>
+     <typeAlias alias="addressVo" type="kr.or.ddit.vo.AddressVO"/>
+     <typeAlias alias="cartVo" type="kr.or.ddit.vo.CartVO"/>
+     <typeAlias alias="clothes_stockVo" type="kr.or.ddit.vo.Clothes_StockVO"/>
+     <typeAlias alias="commentVo" type="kr.or.ddit.vo.CommentVO"/>
+     <typeAlias alias="deliveryVo" type="kr.or.ddit.vo.DeliveryVO"/>
+     <typeAlias alias="fileinfoVo" type="kr.or.ddit.vo.FileInfoVO"/>
+     <typeAlias alias="lprodVo" type="kr.or.ddit.vo.LprodVO"/>
+     <typeAlias alias="memberVo" type="kr.or.ddit.vo.MemberVO"/>
+     <typeAlias alias="noticeVo" type="kr.or.ddit.vo.NoticeVO"/>
+     <typeAlias alias="paymentVo" type="kr.or.ddit.vo.PaymentVO"/>
+     <typeAlias alias="prodVo" type="kr.or.ddit.vo.ProdVO"/>
+     <typeAlias alias="qnaVo" type="kr.or.ddit.vo.QnaVO"/>
+     <typeAlias alias="returnsVo" type="kr.or.ddit.vo.ReturnsVO"/>
+     <typeAlias alias="reviewVo" type="kr.or.ddit.vo.ReviewVO"/>
+     <typeAlias alias="salesrequestVo" type="kr.or.ddit.vo.SalesRequestVO"/>
+     <typeAlias alias="shoes_stockVo" type="kr.or.ddit.vo.Shoes_StockVO"/>
+     <typeAlias alias="snsVo" type="kr.or.ddit.vo.SnsVO"/>
+     <typeAlias alias="usedcartVo" type="kr.or.ddit.vo.UsedCartVO"/>
+     <typeAlias alias="usedprodVo" type="kr.or.ddit.vo.UsedProdVO"/>
+     <typeAlias alias="wishVo" type="kr.or.ddit.vo.WishVO"/>
+     <typeAlias alias="likeVo" type="kr.or.ddit.vo.LikeVO"/>
+     <!-- DB와 연결을 처리하는 부분  -->
+     <transactionManager type = "JDBC">
+        <dataSource type = "SIMPLE">
+            <property name = "JDBC.Driver" value = "${driver}"/> <!-- 리소스 파일 없이 value에 직접 써도 됨. -->
+            <property name = "JDBC.ConnectionURL" value = "${url}"/>
+            <property name = "JDBC.Username" value = "${user}"/>
+            <property name = "JDBC.Password" value = "${pass}"/>
+        </dataSource>
+     </transactionManager>
+     
+     <!-- 
+        실행할 SQL문은 xml문서로 따로 만든 후 xml문서를 등록하여 사용한다.
+        
+        등록 형식) <sqlMap resource = "경로명/파일명.xml" />
+      -->
+      <sqlMap resource = "kr/or/ddit/ibatis/mapping/acc_stock.xml" />
+      <sqlMap resource = "kr/or/ddit/ibatis/mapping/address.xml" />
+      <sqlMap resource = "kr/or/ddit/ibatis/mapping/cart.xml" />
+      <sqlMap resource = "kr/or/ddit/ibatis/mapping/clothes_stock.xml" />
+      <sqlMap resource = "kr/or/ddit/ibatis/mapping/comment.xml" />
+      <sqlMap resource = "kr/or/ddit/ibatis/mapping/delivery.xml" />
+      <sqlMap resource = "kr/or/ddit/ibatis/mapping/fileinfo.xml" />
+      <sqlMap resource = "kr/or/ddit/ibatis/mapping/lprod.xml" />
+      <sqlMap resource = "kr/or/ddit/ibatis/mapping/member.xml" />
+      <sqlMap resource = "kr/or/ddit/ibatis/mapping/notice.xml" />
+      <sqlMap resource = "kr/or/ddit/ibatis/mapping/payment.xml" />
+      <sqlMap resource = "kr/or/ddit/ibatis/mapping/prod.xml" />
+      <sqlMap resource = "kr/or/ddit/ibatis/mapping/qna.xml" />
+      <sqlMap resource = "kr/or/ddit/ibatis/mapping/returns.xml" />
+      <sqlMap resource = "kr/or/ddit/ibatis/mapping/review.xml" />
+      <sqlMap resource = "kr/or/ddit/ibatis/mapping/salesrequest.xml" />
+      <sqlMap resource = "kr/or/ddit/ibatis/mapping/shoes_stock.xml" />
+      <sqlMap resource = "kr/or/ddit/ibatis/mapping/sns.xml" />
+      <sqlMap resource = "kr/or/ddit/ibatis/mapping/usedcart.xml" />
+      <sqlMap resource = "kr/or/ddit/ibatis/mapping/usedprod.xml" />
+      <sqlMap resource = "kr/or/ddit/ibatis/mapping/wish.xml" />
+      <sqlMap resource = "kr/or/ddit/ibatis/mapping/like.xml" />
+      
+</sqlMapConfig>

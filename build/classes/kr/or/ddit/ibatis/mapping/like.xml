@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMap
+    PUBLIC "-/ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+    
+<sqlMap namespace="like">
+    <select id="selectAllLike" resultClass="likeVo">
+        SELECT * FROM LIKES
+    </select>
+    
+    <select id="selectLike_mem_id" parameterClass="map" resultClass="int">
+        SELECT COUNT(*) FROM LIKES WHERE SNS_NO = #sns_no# AND MEM_ID = #mem_id#
+    </select>
+    
+    <insert id="insertLike" parameterClass="likeVo">
+        INSERT INTO LIKES VALUES(LIKES_SEQ.NEXTVAL, #mem_id#, #sns_no#)
+    </insert>
+    
+    <delete id="deleteLike" parameterClass="map">
+        DELETE FROM LIKES WHERE MEM_ID = #mem_id# AND SNS_NO = #sns_no#
+    </delete>
+
+</sqlMap>

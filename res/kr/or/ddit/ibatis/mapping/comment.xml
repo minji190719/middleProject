@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 이 문서는 iBatis에서 처리할 SQL문을 작성하는 문서입니다. -->
+<!DOCTYPE sqlMap
+    PUBLIC "-/ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+    
+<sqlMap namespace="comment">
+
+	<select id="selectAllComment" resultClass="commentVo">
+		select * from comments
+	</select>
+	
+	<select id="selectCommentBoardNo" parameterClass="String" resultClass="commentVo">
+		select * from comments where board_no = #board_no# ORDER BY COM_DATE
+	</select>
+
+	<select id="selectComment" parameterClass="String" resultClass="commentVo">
+		select * from comments where mem_id = #data#
+	</select>
+	
+	<select id="selectComment_com_no" resultClass="commentVo" parameterClass="String">
+	   SELECT * FROM COMMENTS WHERE COM_NO = #com_no#
+	</select>
+	
+     <insert id="insertComment" parameterClass="commentVo">
+
+       insert into comments(com_no,mem_id,com_content,com_date,board_no) 
+       values(comment_seq.nextval,#mem_id#,#com_content#,sysdate,#board_no#)
+
+    </insert>
+    
+    <update id="updateComment" parameterClass="map">
+    	update comments set $column$ = #data# where com_no = #com_no#
+    </update>
+    
+    <update id="updateComment2" parameterClass="commentVo">
+    	update comments set mem_id = #mem_id#, com_content = #com_content#, 
+    	com_date= #com_date#,board_no=#board_no# where com_no = #com_no#
+    </update>
+    
+    <delete id="deleteComment" parameterClass="String">
+    	delete from comments where com_no = #com_no#
+    </delete>
+
+</sqlMap>

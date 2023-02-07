@@ -1,0 +1,265 @@
+@charset "UTF-8";
+
+
+/*********  판매요청 상세보기 *********/
+
+.reqDetail_contents{
+	width: 800px
+}
+
+.reqDetail_contents__text{
+	jsutify-content: center;
+}
+
+
+#reqDetail_content_tb{
+    margin: 30px;
+    /*     border: 1px solid black; */
+}
+
+#reqDetail_content_tb td{
+    width: 150px;
+    padding: 10px 10px;
+}
+
+#reqDetail_content_tb td:first-child{
+    text-align: left;
+    font-weight: 600;
+}
+
+#reqDetail_content_tb td:last-child{
+    text-align: left;
+    width: 300px;
+}
+
+#reqDetail_content_tb tr:nth-child(6) td:last-child{
+    line-height: 30px;
+}
+
+.reqDetail_btns{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.reqDetail_btns__tb{
+	border: none;
+	background-color: transparent;
+	
+}
+
+#reqbtnList,
+#reqbtnModify,
+#reqbtnReject,
+#reqbtnAccept,
+#reqbtnDelete{
+    width: 200px;
+    margin: 10px 5px;
+}
+
+#reqbtnList{
+    width: 100%;	
+}
+
+
+/*********  판매요청 수정 *********/
+#btnList,
+#btnSave{
+    padding: 13px;
+    width: 100px;
+}
+
+#reqUpadateImg img{
+	width: 397px;
+    height: 446px;
+}
+
+#ReqUpdateForm__tb{
+	margin-top: 50px;
+}
+
+#ReqUpdateForm__tb td{
+	padding: 10px;
+}
+
+#ReqUpdateForm__tb td textarea{
+	font-family: inherit;
+	font-size: inherit; 
+}
+
+#ReqUpdateForm__tb img{
+	width: 397px;
+    height: 446px;
+}
+
+#ReqUpdateForm__tb td:first-child{
+	padding: 10px;
+	font-weight: 600;
+}
+
+#ReqUpdateForm__tb textarea{
+	resize: none;
+    background: none;	
+}
+
+/* #ReqUpdateForm__tb td input :not(input[type="file"]){ */
+/* 	border-bottom: 1px solid black; */
+/* } */
+
+#ReqUpdateForm__tb td input[type="text"]{
+    width: 250px;
+    height: 30px;
+    font-size: 15px;
+    background: none;
+}
+
+/*********  관리자 - 판매요청 수정 *********/
+
+
+.onum-admin{
+	display : flex ;
+ 	flex-direction : row ;
+ 	flex-wrap : wrap ;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    background-color: white;
+}
+
+.onum-admin2{
+	zoom: 0.7;
+}
+
+#ReqListNoMsg{
+	font-size: 20px;
+	padding: 50px 0;
+	
+}
+
+.onum-admin-list{
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 43%;
+    margin: 30px;
+    padding: 0 30px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+.onum-mypage__title h3{
+	font-weight: bold;
+/* 	border-bottom: 1px solid black; */
+	padding-left: 0;
+}
+
+.onum-admin-list tr th{
+	padding: 10px 10px;
+	text-align: left;
+	border-bottom: 1px solid black;
+}
+.onum-admin-list tr td{
+	padding: 10px 5px;
+	text-align: left;
+}
+
+.onum-admin-list tr th{
+	font-weight: bold;
+    width: 150px;
+    	
+}
+
+.onum-admin-list tr th:first-child{
+    padding-left : 0;	
+}
+
+
+.onum-admin-list tr th:nth-child(3){
+    width: 500px;	
+}
+
+.onum-admin-list tr th:last-child{
+    width: 200px;	
+    padding-right: 0;
+}
+
+.onum-admin-list tr td:last-child{
+    text-align: center;	
+}
+
+/*********  관리자 - 판매요청 승인 *********/
+
+.ReqAccept__container{
+	margin: 50px;
+}
+
+#btnAccept{
+	padding: 13px;
+	width: 100px;
+}
+
+
+
+
+
+/************* 모달창 - showprod 로 옮기기! *************/
+.cartModal-header{
+	display: flex;
+	align-content: center;
+	padding: 30px 20px 30px;
+}
+
+.cartModal-header h4{
+	margin-right: auto;
+	font-size: 20px;
+}
+
+.cartModal-body__content{
+	padding: 0px 30px;
+	display: flex;
+	
+}
+
+.cartModal-body__content__column{
+	line-height: 40px
+}
+
+.cartModal-body__content__column:last-child{
+	margin-left: 20px;
+}
+
+.cartModal-body__content__column img{
+	width: 150px;
+	height: 150px;
+	
+}
+
+.cartModal-footer{
+	display: flex;
+	justify-content: space-evenly;
+	align-item: center;
+	margin-bottom: 20px;
+	padding: 0px 40px;
+}
+
+.ModalCartBtn{
+	background-color: white;
+	border: 1px solid #e5e5e5;
+	border-radius: 40px;
+	width: 40%;
+	padding: 30px;
+	color: black;
+}
+
+.ModalCloseBtn{
+	margin-left: 20px;
+	border-radius: 40px;
+	padding: 5px 10px;
+	width: 40%;
+}
+
+.ModalCloseBtn:active{
+	background-color: #e5e5e5;
+	border: none;
+}

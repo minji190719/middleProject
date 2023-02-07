@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+.inwish{
+	line-height: 25px;
+}
+
+.inwish p:first-child{
+	font-weight: 600;
+}
+
+.inwish p:last-child{
+	font-weight: 600;
+	margin-bottom: 10px;
+}
+
+.inwish p:nth-child(3){
+	font-weight: 600;
+	margin-bottom: 10px;
+}
+
+.inwish_btns{
+	display: flex;
+	justify-content: center;
+	align-item: center;
+	padding: 10px;
+}
+
+
+.deleteBtninwish{
+	background-color: black;
+    border-radius: 23px;
+    padding: 0 10px;
+    margin-bottom: 15px;
+    margin-right: 10px;
+    font-size: 15px;
+    font-weight: 500;
+	color: #f6f6f6;
+    cursor: pointer;
+    width: 100px;
+    height: 50px;
+/*     margin-left: 250px; */
+}
+
+.deleteBtninwish:hover{
+	background-color: #e5e5e5;
+    color: #757575;
+	border: none;
+	}
+
+
+
+.cartBtninwish{
+	background-color: white;
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 30px;
+    font-size: 15px;
+    font-weight: 500;
+	color: black;
+    cursor: pointer;
+    border : 1px solid gray;
+/*     margin-left: 50px; */
+    width: 129px;
+  
+}
+
+.cartBtninwish:hover{
+/* 	background-color: #e5e5e5; */
+/*     color: #757575; */
+	border: 1px solid gray;
+	border: none;
+}
+
+
+.inwish p{
+	text-align: center;
+}

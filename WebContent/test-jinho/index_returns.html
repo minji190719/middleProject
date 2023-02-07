@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+
+<body>
+    <div id="target"></div>
+    제목 : <input type="text" id="titleBox"> <br>
+    내용 : <input type="text" id="contentBox"> <br>
+    <input type="button" value="작성하기" id="insertBtn">
+
+</body>
+
+<script>
+    const urlSearch = new URLSearchParams(location.search);
+    let cart_no = urlSearch.get("cart_no");
+
+    document.getElementById("insertBtn").onclick = function () {
+        let returns_title = document.getElementById("titleBox").value;
+        let returns_content = document.getElementById("contentBox").value;
+
+        const request = new XMLHttpRequest();
+
+        request.open("post", "/nikepro/returnsInsert.do", true);
+
+        request.setRequestHeader("Content-Type", "application/json");
+
+        request.send("cart_no=" + cart_no + "&returns_title=" + returns_title + "&returns_content=" + returns_content);
+
+        request.onreadystatechange = function () {
+            if (request.readyState === 4 && request.status === 200) {
+                let data = request.response;
+                alert(data);
+                //반품작성목록으로 로케이션
+                location.href = "/nikepro/returnsMyList.do";
+            }
+        }
+    }
+
+    window.onload = function () {
+        const request = new XMLHttpRequest();
+
+        request.open("post", "/nikepro/returnsList.do", true);
+
+        request.setRequestHeader("Content-Type", "application/json");
+
+        request.send("cart_no=" + cart_no);
+
+        request.onreadystatechange = function () {
+            if (this.readyState === 4 && this.status === 200) {
+                let target = document.getElementById("exampleTable");
+                let data = request.response;
+
+                if (data === "로그인을 해주세요.") {
+                    alert(data);
+                    location.href = "/nikepro/SnsMain.do";
+
+                } else if (data === "구매 내역이 없습니다.") {
+                    alert(data);
+                    location.href = "/nikepro/SnsMain.do";
+
+                } else {
+                    let str = JSON.parse(data);
+                    let code = "";
+
+                    code += "<thead><tr><td>카트번호</td><td>상품코드</td><td>상품명</td><td>가격</td><td>결제일</td></tr></thead>";
+                    code += '<tbody>';
+
+                    for (index in str) {
+
+                        if (str[index].cart_no === cart_no) {
+                            code += "<tr><td>" + str[index].cart_no + "</td>";
+                            code += "<td>" + str[index].prod_id + "</td>";
+                            code += "<td>" + str[index].prod_name + "</td>";
+                            code += "<td>" + str[index].prod_price + "</td>";
+                            code += "<td>" + str[index].pay_date + "</td></tr>";
+
+                        }
+
+                    }
+
+                    code += '</tbody>';
+                    target.innerHTML = code;
+
+                    $('#exampleTable').DataTable({
+                        order: [[3, 'desc']],
+                        ordering: true,
+                        serverSide: false
+                    });
+                }
+            }
+        }
+    }
+
+
+
+</script>
+
+</html>

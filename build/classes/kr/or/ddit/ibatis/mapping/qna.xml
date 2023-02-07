@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+    PUBLIC "-/ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+ 
+<sqlMap namespace="qna">
+    
+    <select id="selectAllQna" resultClass="qnaVo">
+        SELECT * FROM QNA
+    </select>
+    
+    <select id="selectQna_title" parameterClass="String" resultClass="qnaVo">
+        <!-- SELECT * FROM QNA WHERE QNA_TITLE = #qna_title# -->
+		select * from QNA where qna_title like '%' || #qna_title# || '%'
+    </select>
+
+    <select id="selectQna" parameterClass="String" resultClass="qnaVo">
+        SELECT * FROM QNA WHERE QNA_NO = #qna_no#
+    </select>
+    
+    <select id="selectQna_prod" parameterClass="String" resultClass="qnaVo">
+        SELECT * FROM QNA WHERE PROD_ID = #prod_id#
+    </select>
+    
+    <select id="selectQna_mem_id" parameterClass="String" resultClass="qnaVo">
+        <!--SELECT * FROM QNA WHERE MEM_ID = #mem_id#-->
+        select * from QNA where mem_id like '%' || #mem_id# || '%'
+    </select>
+    
+    <insert id="insertQna" parameterClass="qnaVo">
+        INSERT INTO QNA VALUES('Q'||QNA_NO_SEQ.NEXTVAL, #mem_id#, #qna_title#,
+                        #qna_content#, SYSDATE, #prod_id#)
+    </insert>
+    
+    <update id="updateQna" parameterClass="map">
+        UPDATE QNA SET $column$ = #data# WHERE QNA_NO = #qna_no#
+    </update>
+    
+    <!-- update2 생략 -->
+    
+    <delete id="deleteQna" parameterClass="String">
+        DELETE FROM QNA WHERE QNA_NO = #qna_no#
+    </delete>
+
+</sqlMap>

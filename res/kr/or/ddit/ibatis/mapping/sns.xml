@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 이 문서는 iBatis에서 처리할 SQL문을 작성하는 문서입니다. -->
+<!DOCTYPE sqlMap
+    PUBLIC "-/ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+    
+<sqlMap namespace="sns">
+    
+    <select id="selectAllSns" resultClass="snsVo">
+        select * from sns ORDER BY SNS_DATE DESC
+    </select>
+    
+    <select id="selectAllSns_Like" parameterClass="String" resultClass="snsVo">
+       SELECT * 
+         FROM SNS A, LIKES B
+        WHERE B.SNS_NO = A.SNS_NO
+          AND B.MEM_ID = #mem_id#
+    </select>
+    
+    <select id="selectSns_no" parameterClass="String" resultClass="snsVo">
+        select * from sns where sns_no = #sns_no#
+    </select>
+    
+    <select id="selectSns_title" parameterClass="String" resultClass="snsVo">
+        select * from sns where sns_title = #sns_title#
+    </select>
+
+    <select id="selectSns_writer" parameterClass="String" resultClass="snsVo">
+        select * from sns where mem_id = #mem_id#
+    </select>
+    
+    <select id="selectSns_prod_name" parameterClass="String" resultClass="snsVo">
+        select * from sns where prod_name LIKE '%'||#prod_name#||'%'
+    </select>
+    
+    <insert id="insertSns" parameterClass="snsVo">
+        insert into sns (sns_no, mem_id, sns_title, sns_date, 
+        				sns_content, sns_like, sns_count, sns_photo, PROD_NAME)
+        		  values('S'||sns_no_seq.nextval, #mem_id#, #sns_title#, sysdate, 
+                                #sns_content#, 0, 0, #sns_photo#, #prod_name#)
+    </insert>
+    
+    <update id="updateSns" parameterClass="map">
+        update sns set $column$ = #data# where sns_no = #sns_no#
+    </update>
+    
+    <!-- update2 자리 -->
+    
+    <delete id="deleteSns" parameterClass="String">
+        delete from sns where sns_no = #sns_no#
+    </delete>
+
+    <delete id="deleteSns_comment" parameterClass="String">
+        delete from comments where BOARD_NO = #sns_no#
+    </delete>
+    
+    <delete id="deleteSns_like" parameterClass="String">
+        delete from likes where sns_no = #sns_no#
+    </delete>
+    
+    
+</sqlMap>

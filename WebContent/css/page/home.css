@@ -1,0 +1,9 @@
+.home-wrap {
+	display: flex;
+	justify-content: center;
+}
+
+.home-imgs {
+	width: 1840px;
+	height: 1188px;
+}

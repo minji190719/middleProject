@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+    PUBLIC "-/ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="prod">
+	<select id="selectAllProd" resultClass="prodVo">
+		SELECT * FROM PROD
+	</select>
+	
+	<select id="selectProd_prod_id" parameterClass="String" resultClass="prodVo" >
+		select * from prod where prod_id = #prod_id#
+	</select>
+	
+	<select id="selectProd_lprod_gu" parameterClass="String" resultClass="prodVo" >
+		select * from prod where lprod_gu = #lprod_gu#
+	</select>
+	
+	<select id="selectProd_lprod_gu_color" parameterClass="map" resultClass="prodVo" >
+		select * from prod where lprod_gu = #lprod_gu# and prod_color = #prod_color# and prod_purpose = #prod_purpose#
+	</select>
+	
+	<select id="selectProd_lprod_gu_price" parameterClass="map" resultClass="prodVo" >
+		select * from prod where lprod_gu = #lprod_gu# and prod_price between #lownum# and #highnum#
+	</select>
+	
+	<select id="selectProd_lprod_gu_color_all" parameterClass="map" resultClass="prodVo" >
+		select * from prod where lprod_gu = #lprod_gu# and prod_color = #prod_color#
+	</select>
+	
+	<select id="selectProd_lprod_gu2" parameterClass="prodVo" resultClass="prodVo" >
+		select * from prod where lprod_gu = #lprod_gu# and prod_purpose =#prod_purpose#
+	</select>
+	
+	
+	<select id="selectProd_prod_name" parameterClass="String" resultClass="prodVo" >
+		select A.*, B.lprod_nm AS lprod_name from prod A, lprod B where A.prod_name = #prod_name# and A.lprod_gu=B.lprod_gu
+	</select>
+	
+	<insert id="insertProd" parameterClass="prodVo" >
+		insert into prod ( prod_id, lprod_gu, prod_name, prod_color,
+						   prod_price, prod_brand, prod_purpose, 
+						   prod_sales, prod_tqty, prod_image)
+		values( #prod_id#, #lprod_gu#, #prod_name#, #prod_color#,
+				#prod_price#, #prod_brand#, #prod_purpose#,
+				#prod_sales#, #prod_tqty#, #prod_image#)
+	</insert>
+	
+	<update id="updateProd" parameterClass="map">
+		update prod set $column$ = #data# where prod_id = #prod_id#
+	</update>
+
+	<update id="updateProd2" parameterClass="prodVo">
+		update prod set prod_name = #prod_name#, prod_color = #prod_color#,
+						prod_price = #prod_price#, prod_brand = #prod_brand#,
+						prod_purpose= #prod_purpose# , prod_sales = #prod_sales#,
+						prod_tqty = #prod_tqty#, prod_image = #prod_image#	
+					 where prod_id = #prod_id#
+	</update>
+	
+	<delete id="deleteProd" parameterClass="String">
+		delete from prod where prod_id = #prod_id#
+	</delete>
+	
+</sqlMap>

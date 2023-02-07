@@ -1,0 +1,115 @@
+@charset "UTF-8";
+
+.onum-mypage__title{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 20px;
+	margin: 30px 50px;
+}
+.filebox label:hover,
+#onumInsertSubmit:honer,
+#onumInsertClose:hover,
+#OnumInsertBtn:hover{
+	background-color: #e5e5e5;
+    color: #757575;
+    border:none;
+}
+
+.filebox label:active,
+#onumInsertSubmit:active,
+#onumInsertClose:active,
+#OnumInsertBtn:active{
+    border:none;
+}
+
+#onumInsertSubmit,
+#onumInsertClose,
+#OnumInsertBtn{
+	background-color: black;
+	font-size: 14px;
+    border-radius: 30px;
+    border: none;
+	color: #f6f6f6;
+	padding: 15px;
+}
+
+
+/* 중고 상품 등록 모달 */
+
+#onumInsertHeader{
+	display: flex;
+	align-items: baseline;
+	padding-top: 10px;
+	
+}
+
+#onumInsertHeader h4{
+	margin-right: auto;
+}
+
+#onumInsertBody{
+	padding: 20px 20px;
+}
+
+#onumInsertBody label{
+	margin: 10px 0;
+	width: 70px;
+}
+
+#onumInsertBody textarea:focus{
+	outline: 1px solid black;
+}
+
+#onumInsertBody input:not(:last-child,.filebox .onum-upload-name){
+	border-bottom: 1px solid black
+}
+
+
+#onumInsertSubmit,
+#onumInsertClose{
+	padding: 10px;
+	border-radius: 20px
+}
+#onumInsertSubmit{
+	padding: 14px;
+}
+
+.filebox input[type="file"] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+}
+
+
+.filebox .onum-upload-name {
+    display: inline-block;
+    height: 40px;
+    padding: 0 10px;
+    vertical-align: middle;
+    border: 1px solid #dddddd;
+    width: 78%;
+    color: #999999;
+    margin-right: 20px;
+}
+
+.filebox label {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    vertical-align: middle;
+    text-align: center;
+    background-color: #999999;
+    cursor: pointer;
+    height: 40px;
+    width: 100px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+
+

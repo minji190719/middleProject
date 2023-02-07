@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="UTF-8">
+   <title>Insert title here</title>
+</head>
+
+<body>
+   글번호 : <input type="text" id="qna_no" name="qna_no">
+   작성자 : <input type="text" id="mem_id" name="mem_id">
+   제목 : <input type="text" id="qna_title" name="qna_title">
+   내용 : <input type="text" id="qna_content" name="qna_title">
+   <hr>
+   <input type="button" id="insertBtn" value="작성하기">
+</body>
+
+<script>
+   document.getElementById("insertBtn").onclick = function () {
+      let qna_no = document.getElementById("qna_no").value;
+      let mem_id = document.getElementById("mem_id").value;
+      let qna_title = document.getElementById("qna_title").value;
+      let qna_content = document.getElementById("qna_content").value;
+
+      const request = new XMLHttpRequest();
+
+      request.open("post", "/nikepro/QnaInsert.do", true);
+      request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+      request.send(`qna_no=${qna_no}&mem_id=${mem_id}
+                    &qna_title=${qna_title}&qna_content=${qna_content}`);
+
+      request.onreadystatechange = function () {
+         if (request.readyState === 4 && request.status === 200) {
+            let data = request.response;
+            //alert(data);
+            location.href = "qna_main.html";
+         }
+      }
+
+   }
+</script>
+
+</html>
